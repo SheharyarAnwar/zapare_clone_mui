@@ -1,8 +1,12 @@
 import Main from "./Views/Main/index";
+import { ThemeProvider } from "@material-ui/core";
+import theme from "./theme";
 function App() {
   return (
     <>
-      <Main />
+      <ThemeProvider theme={theme}>
+        <Main />
+      </ThemeProvider>
     </>
   );
 }

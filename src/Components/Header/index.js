@@ -1,70 +1,49 @@
-import React, { createRef } from "react";
+import { Grid, Hidden, Typography } from "@material-ui/core";
+import React from "react";
 import { ReactComponent as Logo } from "../../Assets/logo.svg";
-import classes from "./index.module.css";
+import style from "./style";
+
 function Index() {
-  const ref = createRef();
-  const mouseOutOptionsHandler = (e) => {
-    let hoveredElement = e.target;
-    let placeHolder = hoveredElement;
-    if (hoveredElement.tagName === "P") {
-      placeHolder = hoveredElement.childNodes[0];
-    }
-    const computedWidth = getComputedStyle(placeHolder).width;
-    placeHolder.parentNode.style.color = "var(--black)";
-    placeHolder.animate([{ width: computedWidth }, { width: 0 }], {
-      duration: 400,
-      easing: "linear",
-    }).onfinish = () => {
-      placeHolder.style.width = 0;
-    };
-  };
-  const mouseOverOptionsHandler = (e) => {
-    let hoveredElement = e.target;
-    let placeHolder = hoveredElement;
-    if (hoveredElement.tagName === "P") {
-      placeHolder = hoveredElement.childNodes[0];
-    }
-    placeHolder.parentNode.style.color = "var(--blue)";
-    placeHolder.animate([{ width: 0 }, { width: "60%" }], {
-      duration: 400,
-      easing: "cubic-bezier(0.775, 0.290, 0.885, 0.410)",
-    }).onfinish = () => {
-      placeHolder.style.width = "60%";
-    };
-  };
-  const navRendered = [
-    "Home",
-    "About us",
-    "Services",
-    "Careers",
-    "Contact",
-  ].map((val, i) => {
+  const styles = style();
+  const options = ["Home", "About us", "Services", "Career", "Contact"];
+  const renderedOptions = options.map((val, i) => {
     return (
-      <p
-        key={i}
-        onMouseEnter={mouseOverOptionsHandler}
-        onMouseLeave={mouseOutOptionsHandler}
-      >
-        <span className={classes.placeHolder} />
+      <p key={i} className={i === 0 ? styles.static : styles.options}>
         {val}
       </p>
     );
   });
   return (
     <>
-      <div className={classes.headerWrapper}>
-        <div className={classes.headerContainer}>
-          <div className={classes.logoContainer}>
-            <Logo width={65} />
-            <p style={{ fontWeight: 600, fontSize: "1.4rem" }}>
-              Zapare Technologies
-            </p>
-          </div>
-          <div className={classes.navbar} ref={ref}>
-            {navRendered}
-          </div>
-        </div>
-      </div>
+      <Grid
+        container
+        xs={12}
+        alignItems="center"
+        justify="space-between"
+        className={styles.root}
+      >
+        <Grid
+          className={styles.logo}
+          container
+          item
+          xs={11}
+          sm={9}
+          md={5}
+          lg={4}
+          alignItems="center"
+        >
+          <Logo width={65} />
+          <Typography variant={"h3"}>Zapare Technologies</Typography>
+        </Grid>
+        <Grid container item justify="flex-end" xs={1} md={6} lg={5} xl={4}>
+          <Hidden mdUp>
+            <span className={styles.hamburger}></span>
+          </Hidden>
+          <Hidden smDown>
+            <div className={styles.nav}>{renderedOptions}</div>
+          </Hidden>
+        </Grid>
+      </Grid>
     </>
   );
 }

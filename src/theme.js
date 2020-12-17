@@ -11,5 +11,23 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: "Open Sans, sans-serif",
   },
+  custom: {
+    headerPadding: {},
+  },
 });
+theme.typography.h3 = {
+  fontWeight: 600,
+  color: theme.palette.blue,
+  [theme.breakpoints.down("xl")]: {
+    fontSize: "1.4rem",
+  },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.33rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1rem",
+  },
+};
+
+// theme = responsiveFontSizes(theme);
 export default theme;
