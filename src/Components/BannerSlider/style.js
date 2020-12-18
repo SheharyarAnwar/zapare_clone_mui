@@ -7,7 +7,7 @@ const style = makeStyles((theme) => {
       fontFamily: theme.typography.fontFamily,
       [theme.breakpoints.down("xl")]: {
         textAlign: "left",
-        position: "absolute",
+        // position: "absolute",
       },
       [theme.breakpoints.down("sm")]: {
         textAlign: "center",
@@ -83,13 +83,15 @@ const style = makeStyles((theme) => {
 
     sliderNav: {
       position: "absolute",
-      bottom: "-15%",
-      left: "300px",
-      width: "30%",
-      maxWidth: "150px",
+      bottom: "10%",
+      left: "80%",
+      width: "160px",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
+      [theme.breakpoints.down("md")]: {
+        bottom: "20%",
+      },
       [theme.breakpoints.down("sm")]: {
         position: "unset",
         display: "flex",
@@ -102,7 +104,7 @@ const style = makeStyles((theme) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      width: "40%",
+      width: "60px",
     },
     dot: {
       cursor: "pointer",
@@ -114,7 +116,7 @@ const style = makeStyles((theme) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      width: "25%",
+      width: "60px",
       [theme.breakpoints.down("sm")]: {
         display: "none",
       },

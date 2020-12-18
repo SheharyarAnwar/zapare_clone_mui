@@ -4,7 +4,12 @@ import { makeStyles } from "@material-ui/core";
 const style = makeStyles((theme) => {
   return {
     root: {
-      marginTop: "4vh",
+      [theme.breakpoints.down("xl")]: {
+        marginTop: "8vh",
+      },
+      [theme.breakpoints.down("sm")]: {
+        marginTop: "4vh",
+      },
     },
     illustration: {
       "& svg": {
