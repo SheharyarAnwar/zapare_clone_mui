@@ -7,6 +7,7 @@ const theme = createMuiTheme({
     blue: "#003a78",
     black: "#212529",
     slate: "#4b4b4b",
+    lightBlue: "#b1cfef",
   },
   typography: {
     fontFamily: "Open Sans, sans-serif",

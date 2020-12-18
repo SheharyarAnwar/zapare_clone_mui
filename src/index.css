@@ -3,6 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background-color: #e1eefc;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fdb811;
+  border: 2px solid transparent;
+}
+body:hover::-webkit-scrollbar-thumb {
+  background-color: #003a78;
+}
+
 /* body {
   font-family: var(--font);
   font-weight: 400;

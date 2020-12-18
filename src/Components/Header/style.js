@@ -39,7 +39,7 @@ const style = makeStyles((theme) => {
         color: theme.palette.blue,
       },
       "&:hover::before": {
-        width: "100%",
+        width: "60%",
       },
     },
     static: {
@@ -61,7 +61,7 @@ const style = makeStyles((theme) => {
       justifyContent: "space-between",
       width: "100%",
       fontWeight: 400,
-      fontSize: "1.05rem",
+      fontSize: "1rem",
       color: theme.palette.slate,
     },
     hamburger: {
