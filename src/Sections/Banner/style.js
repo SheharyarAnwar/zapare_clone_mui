@@ -14,6 +14,9 @@ const style = makeStyles((theme) => {
     illustration: {
       "& svg": {
         [theme.breakpoints.down("xl")]: {
+          maxWidth: "630px",
+        },
+        [theme.breakpoints.down("lg")]: {
           maxWidth: "530px",
         },
         [theme.breakpoints.down("sm")]: {

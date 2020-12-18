@@ -18,6 +18,7 @@ function Index() {
       <Grid
         container
         xs={12}
+        item
         alignItems="center"
         justify="space-between"
         className={styles.root}
