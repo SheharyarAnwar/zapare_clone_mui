@@ -1,7 +1,8 @@
-import React from "react";
-import { Grid } from "@material-ui/core";
+import React, { useMemo } from "react";
+// import { Grid } from "@material-ui/core";
 import { ReactComponent as Illustration } from "../../Assets/illustration.svg";
 import BannerSlider from "../../Components/BannerSlider/index";
+import SectionLayout from "../../Layout/SectionLayout/index";
 import style from "./style";
 const content = [
   {
@@ -19,30 +20,29 @@ const content = [
 ];
 function Index() {
   const styles = style();
+  const settings = useMemo(() => ({
+    left: {
+      item: true,
+      container: true,
+      md: 6,
+      justify: "center",
+      className: styles.illustration,
+      alignItems: "center",
+      children: <Illustration />,
+    },
+    right: {
+      item: true,
+      container: true,
+      md: 6,
+      className: styles.slider,
+      justify: "flex-start",
+      alignItems: "center",
+      children: <BannerSlider content={content} />,
+    },
+  }));
   return (
     <>
-      <Grid container className={styles.root}>
-        <Grid
-          item
-          container
-          md={6}
-          justify="center"
-          className={styles.illustration}
-          alignItems="center"
-        >
-          <Illustration />
-        </Grid>
-        <Grid
-          item
-          container
-          md={6}
-          className={styles.slider}
-          justify="flex-start"
-          alignItems="center"
-        >
-          <BannerSlider content={content} />
-        </Grid>
-      </Grid>
+      <SectionLayout {...settings} />
     </>
   );
 }
