@@ -16,6 +16,7 @@ const style = makeStyles((theme) => {
 
     sliderNav: {
       position: "absolute",
+      zIndex: 5,
       bottom: "10%",
       left: "80%",
       width: "160px",

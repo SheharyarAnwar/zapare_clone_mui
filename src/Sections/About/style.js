@@ -4,6 +4,12 @@ import { makeStyles } from "@material-ui/core";
 const style = makeStyles((theme) => {
   return {
     root: {
+      [theme.breakpoints.down("xl")]: {
+        marginTop: "12vh",
+      },
+      [theme.breakpoints.down("lg")]: {
+        marginTop: "8vh",
+      },
       [theme.breakpoints.down("sm")]: {
         flexDirection: "column-reverse",
       },
@@ -25,6 +31,11 @@ const style = makeStyles((theme) => {
         color: theme.palette.slate,
         display: "inline-block",
         [theme.breakpoints.down("xl")]: {
+          fontSize: "calc((1.2em + 2vw) / 2.6)",
+          marginTop: "60px",
+        },
+
+        [theme.breakpoints.down("lg")]: {
           fontSize: "calc((1.2em + 3vw) / 2.6)",
           marginTop: "40px",
         },
@@ -49,6 +60,12 @@ const style = makeStyles((theme) => {
       "& img": {
         marginTop: "10%",
         [theme.breakpoints.down("xl")]: {
+          position: "absolute",
+          paddingLeft: "10%",
+          bottom: "-30%",
+          right: "-10%",
+        },
+        [theme.breakpoints.down("lg")]: {
           position: "absolute",
           paddingLeft: "10%",
           bottom: "-30%",
