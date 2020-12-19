@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import SectionLayout from "../../Layout/SectionLayout/index";
 import { ReactComponent as Oval } from "../../Assets/oval.svg";
 import style from "./style";
+import { Box } from "@material-ui/core";
 
 function Index() {
   const styles = style();
@@ -17,15 +18,17 @@ function Index() {
         alignItems: "center",
         children: (
           <>
-            <RichText
-              heading={"Services."}
-              content="We offer customized digital services and scalable operational
+            <Box>
+              <RichText
+                heading={"Services."}
+                content="We offer customized digital services and scalable operational
                strategies to prepare your Organization ride through the waves
                 of uncertainty in the form of disruptive technology and 
                 government regulations so you can deliver accelerated 
                 and cost-effective services for your consumers"
-              action={"Explore services"}
-            />
+                action={"Explore services"}
+              />
+            </Box>
           </>
         ),
       },
@@ -36,7 +39,12 @@ function Index() {
         className: styles.image,
         justify: "center",
         alignItems: "center",
-        children: <Oval />,
+        children: (
+          <Box className={styles.ovalAndBoxContainer} width="100%">
+            <Oval />
+            <span className={styles.boxes} />
+          </Box>
+        ),
       },
     }),
     []

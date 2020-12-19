@@ -5,7 +5,7 @@ const style = makeStyles((theme) => {
   return {
     root: {
       [theme.breakpoints.down("xl")]: {
-        marginTop: "16vh",
+        marginTop: "22vh",
       },
       [theme.breakpoints.down("lg")]: {
         marginTop: "10vh",

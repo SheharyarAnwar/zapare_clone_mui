@@ -25,7 +25,13 @@ const style = makeStyles((theme) => {
         padding: "5% 8%",
       },
     },
-
+    ovalAndBoxContainer: {
+      position: "relative",
+      [theme.breakpoints.down("sm")]: {
+        display: "flex",
+        justifyContent: "center",
+      },
+    },
     image: {
       "& svg": {
         width: "100%",
@@ -34,14 +40,23 @@ const style = makeStyles((theme) => {
         },
       },
     },
-    // boxes:{
-    //     position:'absolute',
-    //     width:'20px',
-    //     height:'20px',
-    //     backgroundColor:'red',
-    //     top:'0',
-    //     left:'50%'
-    // }
+    boxes: {
+      display: "flex",
+      justifyContent: "space-between",
+      position: "absolute",
+      [theme.breakpoints.down("xl")]: {
+        width: "80%",
+        height: "80%",
+        top: "10%",
+        left: "10%",
+      },
+      [theme.breakpoints.down("sm")]: {
+        top: "5%",
+        left: "27.5%",
+        width: "45%",
+        height: "90%",
+      },
+    },
   };
 });
 export default style;
