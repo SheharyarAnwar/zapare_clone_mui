@@ -17,7 +17,7 @@ function Index() {
       children: (
         <>
           <h2>We Are</h2>
-          <p>
+          <p className={styles.richText}>
             A highly specialized Management team with over 20 combined years of
             experience in the Healthcare industry with proven ability to
             optimally combine digital technology, skilled resources and
@@ -27,6 +27,7 @@ function Index() {
             it is in the space of Consulting, Product Management or Service
             Delivery
           </p>
+          <Paragraph>About us</Paragraph>
         </>
       ),
     },

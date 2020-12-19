@@ -33,19 +33,21 @@ function Index({ content }) {
       }),
     [content]
   );
-  const renderedDots = useMemo(() =>
-    renderedText.map((val, i) => {
-      return (
-        <div
-          key={i}
-          className={[
-            styles.dot,
-            i === selectedSliderId ? styles.blue : styles.lightblue,
-          ].join(" ")}
-          onClick={() => setSelectedSliderId(i)}
-        ></div>
-      );
-    })
+  const renderedDots = useMemo(
+    () =>
+      renderedText.map((val, i) => {
+        return (
+          <div
+            key={i}
+            className={[
+              styles.dot,
+              i === selectedSliderId ? styles.blue : styles.lightblue,
+            ].join(" ")}
+            onClick={() => setSelectedSliderId(i)}
+          ></div>
+        );
+      }),
+    []
   );
   return (
     <>

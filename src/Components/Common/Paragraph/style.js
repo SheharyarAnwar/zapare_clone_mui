@@ -14,7 +14,6 @@ const style = makeStyles((theme) => {
         display: "inline-block",
         [theme.breakpoints.down("xl")]: {
           fontSize: "calc((1.2em + 3vw) / 2.8)",
-
           marginTop: "40px",
         },
         [theme.breakpoints.down("sm")]: {

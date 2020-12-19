@@ -20,26 +20,29 @@ const content = [
 ];
 function Index() {
   const styles = style();
-  const settings = useMemo(() => ({
-    left: {
-      item: true,
-      container: true,
-      md: 6,
-      justify: "center",
-      className: styles.illustration,
-      alignItems: "center",
-      children: <Illustration />,
-    },
-    right: {
-      item: true,
-      container: true,
-      md: 6,
-      className: styles.slider,
-      justify: "flex-start",
-      alignItems: "center",
-      children: <BannerSlider content={content} />,
-    },
-  }));
+  const settings = useMemo(
+    () => ({
+      left: {
+        item: true,
+        container: true,
+        md: 6,
+        justify: "center",
+        className: styles.illustration,
+        alignItems: "center",
+        children: <Illustration />,
+      },
+      right: {
+        item: true,
+        container: true,
+        md: 6,
+        className: styles.slider,
+        justify: "flex-start",
+        alignItems: "center",
+        children: <BannerSlider content={content} />,
+      },
+    }),
+    []
+  );
   return (
     <>
       <SectionLayout {...settings} />
