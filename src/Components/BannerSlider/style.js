@@ -7,24 +7,10 @@ const style = makeStyles((theme) => {
       fontFamily: theme.typography.fontFamily,
       [theme.breakpoints.down("xl")]: {
         textAlign: "left",
-        // position: "absolute",
       },
       [theme.breakpoints.down("sm")]: {
         textAlign: "center",
         position: "unset",
-      },
-      color: theme.palette.blue,
-      //minWidth: "500px",
-      fontSize: "13.2px",
-      "& h2": {
-        [theme.breakpoints.down("xl")]: {
-          fontSize: "calc(1.2em + 2.4vw)",
-          textAlign: "left",
-        },
-        [theme.breakpoints.down("sm")]: {
-          fontSize: "calc(1.4em + 1.2vw)",
-          textAlign: "center",
-        },
       },
     },
 
