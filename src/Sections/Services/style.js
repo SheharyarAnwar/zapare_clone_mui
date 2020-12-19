@@ -5,14 +5,13 @@ const style = makeStyles((theme) => {
   return {
     root: {
       [theme.breakpoints.down("xl")]: {
-        marginTop: "16vh",
+        marginTop: "20vh",
       },
       [theme.breakpoints.down("lg")]: {
-        marginTop: "10vh",
+        marginTop: "45vh",
       },
       [theme.breakpoints.down("sm")]: {
         marginTop: "6vh",
-        flexDirection: "column-reverse",
       },
     },
     aboutText: {
@@ -28,27 +27,21 @@ const style = makeStyles((theme) => {
     },
 
     image: {
-      position: "relative",
-      "& img": {
-        marginTop: "10%",
-        [theme.breakpoints.down("xl")]: {
-          position: "absolute",
-          paddingLeft: "10%",
-          bottom: "-30%",
-          right: "-10%",
-        },
-        [theme.breakpoints.down("lg")]: {
-          position: "absolute",
-          paddingLeft: "10%",
-          bottom: "-30%",
-          right: "-25%",
-        },
+      "& svg": {
+        width: "100%",
         [theme.breakpoints.down("sm")]: {
-          maxWidth: "80%",
-          position: "unset",
+          width: "50%",
         },
       },
     },
+    // boxes:{
+    //     position:'absolute',
+    //     width:'20px',
+    //     height:'20px',
+    //     backgroundColor:'red',
+    //     top:'0',
+    //     left:'50%'
+    // }
   };
 });
 export default style;
