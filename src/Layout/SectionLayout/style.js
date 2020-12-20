@@ -24,7 +24,7 @@ const style = makeStyles((theme) => {
       },
       "& h2": {
         [theme.breakpoints.down("xl")]: {
-          fontSize: "calc(1.2em + 2.4vw)",
+          fontSize: "calc(1.5em + 3vw)",
           textAlign: "left",
         },
         [theme.breakpoints.down("sm")]: {
