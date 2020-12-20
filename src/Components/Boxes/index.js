@@ -1,9 +1,11 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
+
 import style from "./style";
+import clsx from "clsx";
 const boxText = [
   "Revenue Cycle Management",
-  "StaffAugmentation",
+  "Staff Augmentation",
   "Payment Posting",
   "Reason Code Mapping",
   "Product Management",
@@ -13,6 +15,13 @@ const boxText = [
 
 function Index() {
   const styles = style();
+
+  const randamizeColors = () => {
+    const ar = ["blue", "transparent", "yellow", "blueNavy", "white"];
+    const randIndex = Math.floor(Math.random() * ar.length);
+    return ar[randIndex];
+  };
+
   const boxLines = boxText
     .map((val, i) => {
       const factor = 3;
@@ -37,15 +46,17 @@ function Index() {
         item
         container
         className={styles.boxContainer}
-        xs={4}
+        sm={4}
+        xs={6}
         direction="column"
-        justify="space-around"
+        justify="center"
+        alignItems="center"
       >
         {val.map((item) => {
           return (
-            <div className={styles.smallBox}>
-              <p>{item[0]}</p>
-              <p>{item}</p>
+            <div className={clsx(styles.smallBox, styles[randamizeColors()])}>
+              <h1 style={{ marginLeft: "80%" }}>{item[0]}</h1>
+              <p style={{ margin: "10%" }}>{item}</p>
             </div>
           );
         })}

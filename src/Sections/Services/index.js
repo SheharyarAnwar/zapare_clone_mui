@@ -39,7 +39,7 @@ function Index() {
         md: 7,
         className: styles.image,
         justify: "flex-start",
-        alignItems: "center",
+
         children: (
           <Box className={styles.ovalAndBoxContainer} width="100%">
             <Oval />
