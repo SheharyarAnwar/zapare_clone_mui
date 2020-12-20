@@ -40,7 +40,7 @@ function Index() {
     })
     .filter((val) => !!val);
 
-  const renderedItems = boxLines.map((val) => {
+  const renderedItems = boxLines.map((val, i) => {
     return (
       <Grid
         item
@@ -48,8 +48,10 @@ function Index() {
         className={styles.boxContainer}
         sm={4}
         xs={6}
+        style={{
+          paddingTop: i * 80,
+        }}
         direction="column"
-        justify="center"
         alignItems="center"
       >
         {val.map((item) => {

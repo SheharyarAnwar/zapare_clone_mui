@@ -5,7 +5,7 @@ const style = makeStyles((theme) => {
   return {
     boxContainer: {
       [theme.breakpoints.down("xl")]: {
-        padding: "10px",
+        //padding: "10px",
       },
       [theme.breakpoints.down("sm")]: {
         padding: "5px",

@@ -36,17 +36,22 @@ const style = makeStyles((theme) => {
     },
     image: {
       "& svg": {
-        width: "100%",
+        width: "120%",
         zIndex: "-5",
-        left: 0,
-        top: 0,
+        left: "-20%",
+        top: "0%",
+        position: "absolute",
+        [theme.breakpoints.down("md")]: {
+          top: "30%",
+          width: "110%",
+        },
         position: "absolute",
         [theme.breakpoints.down("sm")]: {
-          minWidth: "85%",
-          top: "-10%",
+          top: "5%",
+          width: "600px",
         },
         [theme.breakpoints.down("xs")]: {
-          minWidth: "800px",
+          top: "22%",
         },
       },
     },
@@ -55,6 +60,7 @@ const style = makeStyles((theme) => {
       height: "100%",
       display: "flex",
       justifyContent: "space-between",
+      marginLeft: "5%",
 
       [theme.breakpoints.down("sm")]: {
         width: "60%",
