@@ -1,4 +1,5 @@
 import RichText from "../../Components/Common/RichText/index";
+import SquareBoxes from "../../Components/Boxes/index";
 import React, { useMemo } from "react";
 import SectionLayout from "../../Layout/SectionLayout/index";
 import { ReactComponent as Oval } from "../../Assets/oval.svg";
@@ -37,12 +38,14 @@ function Index() {
         container: true,
         md: 7,
         className: styles.image,
-        justify: "center",
+        justify: "flex-start",
         alignItems: "center",
         children: (
           <Box className={styles.ovalAndBoxContainer} width="100%">
             <Oval />
-            <span className={styles.boxes} />
+            <Box className={styles.boxes}>
+              <SquareBoxes />
+            </Box>
           </Box>
         ),
       },

@@ -29,7 +29,7 @@ const style = makeStyles((theme) => {
       position: "relative",
       [theme.breakpoints.down("sm")]: {
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-start",
       },
     },
     image: {
@@ -41,21 +41,26 @@ const style = makeStyles((theme) => {
       },
     },
     boxes: {
+      width: "100%",
+      height: "100%",
+      left: 0,
+      top: 0,
+      border: "1px solid red",
       display: "flex",
       justifyContent: "space-between",
       position: "absolute",
-      [theme.breakpoints.down("xl")]: {
-        width: "80%",
-        height: "80%",
-        top: "10%",
-        left: "10%",
-      },
-      [theme.breakpoints.down("sm")]: {
-        top: "5%",
-        left: "27.5%",
-        width: "45%",
-        height: "90%",
-      },
+      // [theme.breakpoints.down("xl")]: {
+      //   width: "80%",
+      //   height: "80%",
+      //   top: "10%",
+      //   left: "10%",
+      // },
+      // [theme.breakpoints.down("sm")]: {
+      //   top: "5%",
+      //   left: "27.5%",
+      //   width: "45%",
+      //   height: "90%",
+      // },
     },
   };
 });
