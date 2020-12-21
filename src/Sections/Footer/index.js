@@ -23,6 +23,7 @@ function Index() {
             />
           </div>
         </Grid>
+
         <Grid
           container
           xs={12}
@@ -31,26 +32,43 @@ function Index() {
           justify="center"
           alignItems="center"
         >
-          <Grid item xs={10} sm={8} md={5} container>
-            <Navbar />
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            sm={4}
-            md={2}
-            justify="space-between"
-            alignItems="center"
-          >
-            <p>Follow Us :</p>
-            <FB fill="white" width={15} height={15} />
-            <LinkedIn fill="white" width={15} height={15} />
-          </Grid>
-          <Grid alignItems="space-between" xs={12}>
-            <p>All right reserved ©2019 zaparetechnologies.com</p>
-            <p>Designed by:Sheharyar Anwar</p>
-          </Grid>
+          <div className={styles.yolo}>
+            <Grid
+              item
+              xs={10}
+              sm={8}
+              md={5}
+              container
+              className={styles.navContainer}
+            >
+              <Navbar />
+            </Grid>
+            <Grid
+              container
+              item
+              xs={6}
+              sm={4}
+              md={2}
+              justify="space-between"
+              alignItems="center"
+            >
+              <p>Follow Us :</p>
+              <FB fill="white" width={15} height={15} />
+              <LinkedIn fill="white" width={15} height={15} />
+            </Grid>
+            <Grid xs={8}></Grid>
+            <Grid
+              container
+              className={styles.credits}
+              justify="space-between"
+              xs={10}
+            >
+              <p style={{ paddingBottom: "20px" }}>
+                All right reserved ©2019 zaparetechnologies.com
+              </p>
+              <p>Designed by:Sheharyar Anwar</p>
+            </Grid>
+          </div>
         </Grid>
       </Grid>
     </>

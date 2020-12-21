@@ -24,19 +24,49 @@ const style = makeStyles((theme) => {
         color: "white",
       },
     },
-    contact: {
+    credits: {
+      position: "absolute",
+      bottom: "10%",
+      [theme.breakpoints.down("xs")]: {
+        justifyContent: "center",
+      },
+      "& p": {
+        [theme.breakpoints.down("xl")]: {
+          fontSize: "calc((1em + 3vw) / 3.5)",
+        },
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "calc((1.2em + 0.5vw) /1.6)",
+        },
+      },
+    },
+    yolo: {
+      position: "relative",
+      height: "60vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      width: "100%",
       backgroundColor: theme.palette.blue,
-      padding: "30vh 0",
-      fontFamily: theme.typography.fontFamily,
+    },
+    navContainer: {
       "& p": {
         display: "inline-block",
-        color: "white",
+        color: "#bcccdd",
         "&::before": {
           display: "none",
         },
         "&:hover": {
-          color: "red",
+          color: "white",
         },
+      },
+    },
+    contact: {
+      fontFamily: theme.typography.fontFamily,
+
+      "& p": {
+        display: "inline-block",
+        color: "#bcccdd",
       },
     },
   };
