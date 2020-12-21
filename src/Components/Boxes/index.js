@@ -1,4 +1,4 @@
-import { Grid, useMediaQuery } from "@material-ui/core";
+import { Grow, Grid, useMediaQuery } from "@material-ui/core";
 import React, { useMemo } from "react";
 
 import style from "./style";
@@ -21,7 +21,7 @@ function Index() {
     const randIndex = Math.floor(Math.random() * ar.length);
     return ar[randIndex];
   };
-
+  let increment = 1;
   const boxLines = useMemo(() => {
     const arr = [];
     return boxText
@@ -42,13 +42,10 @@ function Index() {
             arr.push(boxText[i + x]);
           }
           return arr;
-        } else {
-          return undefined;
         }
       })
       .filter((val) => !!val);
   }, [smMatch]);
-  console.log(boxLines);
   const renderedItems = useMemo(
     () =>
       boxLines.map((val, i) => {
@@ -65,20 +62,23 @@ function Index() {
             direction="column"
             alignItems="center"
           >
-            {val.map((item) => {
+            {val.map((item, index) => {
+              increment++;
               return (
-                <div
-                  className={clsx(styles.smallBox, styles[randamizeColors()])}
-                >
-                  <h1 style={{ marginLeft: "80%" }}>{item[0]}</h1>
-                  <p style={{ margin: "10%" }}>{item}</p>
-                </div>
+                <Grow in timeout={500 * increment}>
+                  <div
+                    className={clsx(styles.smallBox, styles[randamizeColors()])}
+                  >
+                    <h1 style={{ marginLeft: "80%" }}>{item[0]}</h1>
+                    <p style={{ margin: "10%" }}>{item}</p>
+                  </div>
+                </Grow>
               );
             })}
           </Grid>
         );
       }),
-    []
+    [smMatch]
   );
   return (
     <>

@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core";
 const style = makeStyles((theme) => {
   return {
     richTextPara: {
+      fontFamily: theme.typography.fontFamily,
       fontWeight: 400,
       lineHeight: 2,
       color: theme.palette.slate,
@@ -23,6 +24,8 @@ const style = makeStyles((theme) => {
       },
     },
     richTextHeading: {
+      fontFamily: theme.typography.fontFamily,
+      color: theme.palette.blue,
       [theme.breakpoints.down("xl")]: {
         fontSize: "calc(1.2em + 3vw)",
         textAlign: "left",

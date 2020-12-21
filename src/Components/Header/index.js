@@ -2,17 +2,10 @@ import { Grid, Hidden, Typography } from "@material-ui/core";
 import React from "react";
 import { ReactComponent as Logo } from "../../Assets/logo.svg";
 import style from "./style";
-
+import Navbar from "./Navbar/index";
 function Index() {
   const styles = style();
-  const options = ["Home", "About us", "Services", "Career", "Contact"];
-  const renderedOptions = options.map((val, i) => {
-    return (
-      <p key={i} className={i === 0 ? styles.static : styles.options}>
-        {val}
-      </p>
-    );
-  });
+
   return (
     <>
       <Grid
@@ -41,7 +34,9 @@ function Index() {
             <span className={styles.hamburger}></span>
           </Hidden>
           <Hidden smDown>
-            <div className={styles.nav}>{renderedOptions}</div>
+            <div className={styles.nav}>
+              <Navbar />
+            </div>
           </Hidden>
         </Grid>
       </Grid>

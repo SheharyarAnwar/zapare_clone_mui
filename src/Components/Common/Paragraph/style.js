@@ -8,12 +8,12 @@ const style = makeStyles((theme) => {
       color: theme.palette.blue,
       "& p": {
         fontWeight: 700,
-        letterSpacing: "-0.4px",
+
         cursor: "pointer",
         position: "relative",
         display: "inline-block",
         [theme.breakpoints.down("xl")]: {
-          fontSize: "calc((1.2em + 3vw) / 2.8)",
+          fontSize: "calc((1.2em + 3vw) / 3.7)",
           marginTop: "40px",
         },
         [theme.breakpoints.down("sm")]: {

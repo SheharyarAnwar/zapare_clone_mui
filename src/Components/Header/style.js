@@ -61,6 +61,7 @@ const style = makeStyles((theme) => {
       justifyContent: "space-between",
       width: "100%",
       fontWeight: 400,
+      margin: "auto",
       fontSize: "1rem",
       color: theme.palette.slate,
     },
