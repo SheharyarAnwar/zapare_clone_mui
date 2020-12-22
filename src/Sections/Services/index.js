@@ -1,13 +1,29 @@
 import RichText from "../../Components/Common/RichText/index";
 import SquareBoxes from "../../Components/Boxes/index";
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import SectionLayout from "../../Layout/SectionLayout/index";
 import { ReactComponent as Oval } from "../../Assets/oval.svg";
 import style from "./style";
 import { Box } from "@material-ui/core";
+import useAnimation from "../../Hooks/useAnimation";
 
 function Index() {
   const styles = style();
+  const { setAnimation } = useAnimation();
+  const [boxesInView, setBoxesInView] = useState(false);
+  const ref = useRef();
+  const textRef = useRef();
+  const isIntersecting = (val) => {
+    if (val) {
+      setBoxesInView(true);
+      setAnimation({
+        trigger: true,
+        settings: { type: "smoothUp" },
+        targets: [textRef.current],
+      });
+    }
+  };
+
   const settings = useMemo(
     () => ({
       rootClass: styles.root,
@@ -19,7 +35,7 @@ function Index() {
         alignItems: "center",
         children: (
           <>
-            <Box>
+            <Box ref={textRef}>
               <RichText
                 heading={"Services."}
                 content="We offer customized digital services and scalable operational
@@ -41,20 +57,20 @@ function Index() {
         justify: "flex-start",
 
         children: (
-          <Box className={styles.ovalAndBoxContainer} width="100%">
+          <Box ref={ref} className={styles.ovalAndBoxContainer} width="100%">
             <Oval />
             <Box className={styles.boxes}>
-              <SquareBoxes />
+              <SquareBoxes runAnimation={boxesInView} />
             </Box>
           </Box>
         ),
       },
     }),
-    []
+    [boxesInView]
   );
   return (
     <>
-      <SectionLayout {...settings} />
+      <SectionLayout triggerIntersection={isIntersecting} {...settings} />
     </>
   );
 }

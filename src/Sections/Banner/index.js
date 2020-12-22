@@ -20,6 +20,7 @@ const content = [
 ];
 function Index() {
   const styles = style();
+  const isIntersecting = () => {};
   const settings = useMemo(
     () => ({
       left: {
@@ -45,7 +46,7 @@ function Index() {
   );
   return (
     <>
-      <SectionLayout {...settings} />
+      <SectionLayout triggerIntersection={isIntersecting} {...settings} />
     </>
   );
 }

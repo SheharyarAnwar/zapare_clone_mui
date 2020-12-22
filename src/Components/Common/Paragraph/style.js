@@ -9,6 +9,7 @@ const style = makeStyles((theme) => {
       "& p": {
         fontWeight: 700,
 
+        zIndex: 4,
         cursor: "pointer",
         position: "relative",
         display: "inline-block",

@@ -7,6 +7,7 @@ import style from "./style";
 
 function Index() {
   const styles = style();
+  const isIntersecting = () => {};
   const settings = useMemo(
     () => ({
       rootClass: styles.root,
@@ -41,7 +42,7 @@ function Index() {
   );
   return (
     <>
-      <SectionLayout {...settings} />
+      <SectionLayout triggerIntersection={isIntersecting} {...settings} />
     </>
   );
 }

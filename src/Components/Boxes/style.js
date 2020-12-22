@@ -25,7 +25,7 @@ const style = makeStyles((theme) => {
     smallBox: {
       width: "85%",
       borderRadius: "20px",
-
+      opacity: 0,
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-around",

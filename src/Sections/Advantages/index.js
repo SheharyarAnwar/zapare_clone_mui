@@ -14,6 +14,8 @@ const list = [
 ];
 function Index() {
   const styles = style();
+  // const [boxesInView,setBoxesInView]=useState(false)
+  const isIntersecting = (inView) => {};
   const settings = useMemo(
     () => ({
       rootClass: styles.root,
@@ -64,7 +66,7 @@ function Index() {
   );
   return (
     <>
-      <SectionLayout {...settings} />
+      <SectionLayout triggerIntersection={isIntersecting} {...settings} />
     </>
   );
 }

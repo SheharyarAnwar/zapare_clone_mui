@@ -1,34 +1,58 @@
 import { Box } from "@material-ui/core";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, createRef } from "react";
 import Paragraph from "../Common/Paragraph/index";
 import style from "./style";
+import useAnimation from "./../../Hooks/useAnimation";
 
 function Index({ content }) {
+  let ref = useRef();
   const [selectedSliderId, setSelectedSliderId] = useState(0);
+  const { setAnimation } = useAnimation();
   const styles = style();
-  const arrowClicked = (direction) => {
-    let incrementFactor = selectedSliderId + 1;
-    let decrementFactor = selectedSliderId - 1;
-    if (incrementFactor >= content.length) {
-      incrementFactor = 0;
+  const arrowClicked = (origin, direction) => {
+    if (origin) {
+      setSelectedSliderId(origin);
+    } else {
+      let incrementFactor = selectedSliderId + 1;
+      let decrementFactor = selectedSliderId - 1;
+      if (incrementFactor >= content.length) {
+        incrementFactor = 0;
+      }
+      if (decrementFactor < 0) {
+        decrementFactor = content.length - 1;
+      }
+      direction === "left"
+        ? setSelectedSliderId(decrementFactor)
+        : setSelectedSliderId(incrementFactor);
     }
-    if (decrementFactor < 0) {
-      decrementFactor = content.length - 1;
-    }
-    direction === "left"
-      ? setSelectedSliderId(decrementFactor)
-      : setSelectedSliderId(incrementFactor);
+    const targetElements = Array.from(
+      renderedText[selectedSliderId].ref.current.children
+    );
+    setAnimation({
+      trigger: true,
+      settings: { type: "translate" },
+      targets: targetElements,
+    });
   };
   const renderedText = useMemo(
     () =>
       content.map((val, i) => {
         return (
-          <>
-            {val.h2.map((val) => (
-              <Box component="h2">{val}</Box>
+          <div ref={ref}>
+            {val.h2.map((val, i) => (
+              <Box
+                component="h2"
+                style={{
+                  backgroundColor: "white",
+                  position: "relative",
+                  zIndex: i,
+                }}
+              >
+                {val}
+              </Box>
             ))}
             <Paragraph>{val.p}</Paragraph>
-          </>
+          </div>
         );
       }),
     [content]
@@ -43,7 +67,7 @@ function Index({ content }) {
               styles.dot,
               i === selectedSliderId ? styles.blue : styles.lightblue,
             ].join(" ")}
-            onClick={() => setSelectedSliderId(i)}
+            onClick={() => arrowClicked(i)}
           ></div>
         );
       }),
@@ -59,13 +83,13 @@ function Index({ content }) {
             <div
               className={styles.arrowLeft}
               onClick={() => {
-                arrowClicked("left");
+                arrowClicked(null, "left");
               }}
             />
             <div
               className={styles.arrowRight}
               onClick={() => {
-                arrowClicked("right");
+                arrowClicked(null, "right");
               }}
             />
           </div>

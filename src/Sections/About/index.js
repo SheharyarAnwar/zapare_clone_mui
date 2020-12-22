@@ -1,11 +1,27 @@
 import RichText from "../../Components/Common/RichText/index";
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useRef } from "react";
 import SectionLayout from "../../Layout/SectionLayout/index";
+import { useInView } from "react-intersection-observer";
 import aboutImage from "../../Assets/about-img.png";
 import style from "./style";
+import useAnimation from "../../Hooks/useAnimation";
 
 function Index() {
   const styles = style();
+  const { setAnimation } = useAnimation();
+  const ref = useRef();
+  const textRef = useRef();
+  const isIntersecting = (val) => {
+    if (val) {
+      console.log(textRef.current);
+      setAnimation({
+        trigger: true,
+        settings: { type: "smoothUp" },
+        targets: [ref.current, textRef.current],
+      });
+    }
+  };
+
   const settings = useMemo(
     () => ({
       rootClass: styles.root,
@@ -16,7 +32,7 @@ function Index() {
         className: styles.aboutText,
         alignItems: "center",
         children: (
-          <>
+          <div ref={textRef}>
             <RichText
               heading={"We Are"}
               content="A highly specialized Management team with over 20 combined years of
@@ -29,7 +45,7 @@ function Index() {
             Delivery"
               action={"About us"}
             />
-          </>
+          </div>
         ),
       },
       right: {
@@ -39,14 +55,14 @@ function Index() {
         className: styles.image,
         justify: "center",
         alignItems: "center",
-        children: <img src={aboutImage} />,
+        children: <img ref={ref} src={aboutImage} />,
       },
     }),
     []
   );
   return (
     <>
-      <SectionLayout {...settings} />
+      <SectionLayout triggerIntersection={isIntersecting} {...settings} />
     </>
   );
 }
