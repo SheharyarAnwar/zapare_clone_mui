@@ -4,15 +4,15 @@ import { makeStyles } from "@material-ui/core";
 const style = makeStyles((theme) => {
   return {
     root: {
-      [theme.breakpoints.down("xl")]: {
-        marginTop: "30vh",
-      },
-      [theme.breakpoints.down("lg")]: {
-        marginTop: "10vh",
-      },
       [theme.breakpoints.down("sm")]: {
         marginTop: "6vh",
         flexDirection: "column-reverse",
+      },
+      [theme.breakpoints.up("md")]: {
+        marginTop: "10vh",
+      },
+      [theme.breakpoints.up("lg")]: {
+        marginTop: "30vh",
       },
     },
     aboutText: {
