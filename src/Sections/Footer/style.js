@@ -1,6 +1,4 @@
 import { makeStyles } from "@material-ui/core";
-
-//const theme=useTheme()
 const style = makeStyles((theme) => {
   return {
     blueWrapper: {
@@ -32,7 +30,7 @@ const style = makeStyles((theme) => {
       },
       "& p": {
         [theme.breakpoints.down("xl")]: {
-          fontSize: "calc((1em + 3vw) / 3.5)",
+          fontSize: "calc((1em + 3vw) / 4)",
         },
         [theme.breakpoints.down("sm")]: {
           fontSize: "calc((1.2em + 0.5vw) /1.6)",

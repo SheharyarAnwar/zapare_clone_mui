@@ -43,7 +43,6 @@ const style = makeStyles((theme) => {
         [theme.breakpoints.down("sm")]: {
           textAlign: "center",
           fontSize: "calc(1.4em + 1.2vw)",
-          textAlign: "center",
         },
       },
     },

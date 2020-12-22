@@ -1,5 +1,7 @@
+import { Grid } from "@material-ui/core";
 import React from "react";
 import style from "../style";
+
 const options = ["Home", "About us", "Services", "Career", "Contact"];
 function Index() {
   const styles = style();
@@ -10,7 +12,11 @@ function Index() {
       </p>
     );
   });
-  return <div className={styles.nav}>{renderedOptions}</div>;
+  return (
+    <Grid className={styles.nav} xs={12}>
+      {renderedOptions}
+    </Grid>
+  );
 }
 
 export default Index;

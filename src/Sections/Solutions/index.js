@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Grid } from "@material-ui/core";
 import { ReactComponent as Sign } from "../../Assets/zSign.svg";
 import style from "./style";

@@ -6,6 +6,7 @@ const style = makeStyles((theme) => {
     root: {
       padding: "0 5%",
       [theme.breakpoints.down("xs")]: {
+        margin: "6vh 0",
         justifyContent: "center",
       },
     },

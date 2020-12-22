@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core";
 const style = makeStyles((theme) => {
   return {
     root: {
+      overflowX: "hidden",
       [theme.breakpoints.down("xl")]: {
         marginTop: "20vh",
         padding: "2%",
@@ -41,8 +42,8 @@ const style = makeStyles((theme) => {
         left: "-20%",
         top: "0%",
         position: "absolute",
+        height: "100%",
         [theme.breakpoints.down("md")]: {
-          top: "30%",
           width: "110%",
         },
         position: "absolute",
@@ -50,9 +51,7 @@ const style = makeStyles((theme) => {
           top: "5%",
           width: "600px",
         },
-        [theme.breakpoints.down("xs")]: {
-          top: "22%",
-        },
+        [theme.breakpoints.down("xs")]: {},
       },
     },
     boxes: {

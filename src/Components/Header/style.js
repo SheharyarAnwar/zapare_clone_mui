@@ -60,10 +60,19 @@ const style = makeStyles((theme) => {
       display: "flex",
       justifyContent: "space-between",
       width: "100%",
+
       fontWeight: 400,
       margin: "auto",
       fontSize: "1rem",
       color: theme.palette.slate,
+      [theme.breakpoints.down("xs")]: {
+        flexDirection: "column",
+        "& p": {
+          display: "inline",
+          textAlign: "center",
+          margin: "10px 0",
+        },
+      },
     },
     hamburger: {
       height: "12px",

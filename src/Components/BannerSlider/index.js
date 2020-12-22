@@ -47,7 +47,7 @@ function Index({ content }) {
           ></div>
         );
       }),
-    []
+    [selectedSliderId]
   );
   return (
     <>

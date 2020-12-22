@@ -5,13 +5,13 @@ const style = makeStyles((theme) => {
   return {
     root: {
       [theme.breakpoints.down("xl")]: {
-        marginTop: "30vh",
+        margin: "20vh 0",
       },
       [theme.breakpoints.down("lg")]: {
-        marginTop: "10vh",
+        margin: "15vh 0",
       },
       [theme.breakpoints.down("sm")]: {
-        marginTop: "6vh",
+        margin: "8vh 0",
         flexDirection: "column-reverse",
       },
     },
