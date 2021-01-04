@@ -47,6 +47,7 @@ function useAnimation() {
               element.style.opacity = 1;
             };
           });
+          break;
         case "smoothUp":
           targets.forEach((element, i) => {
             element.animate(
