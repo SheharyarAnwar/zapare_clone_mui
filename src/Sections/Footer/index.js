@@ -63,9 +63,6 @@ function Index() {
               justify="space-between"
               xs={10}
             >
-              <p style={{ paddingBottom: "20px" }}>
-                All right reserved ©2019 zaparetechnologies.com
-              </p>
               <p>Designed by: Sheharyar Anwar</p>
             </Grid>
           </div>
