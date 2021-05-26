@@ -42,7 +42,7 @@ const style = makeStyles((theme) => {
       height: "60vh",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "flex-start",
+      justifyContent: "space-around",
       alignItems: "center",
       width: "100%",
       backgroundColor: theme.palette.blue,
