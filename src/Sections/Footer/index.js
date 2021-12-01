@@ -63,7 +63,7 @@ function Index() {
               justify="space-between"
               xs={10}
             >
-              <p>Designed by: Sheharyar Anwar</p>
+              <p>Developed by: Sheharyar Anwar</p>
             </Grid>
           </div>
         </Grid>
